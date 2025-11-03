@@ -1,4 +1,4 @@
-<img width="1919" height="923" alt="Screenshot 2025-11-03 191616" src="https://github.com/user-attachments/assets/21ef8ee9-9678-4980-b604-8b92346b1890" /># Cloud-Front-Distribution
+# Cloud-Front-Distribution
 
 # ☁️ AWS CloudFront with S3 Static Website Hosting (with OAC Security)
 
