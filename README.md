@@ -43,6 +43,9 @@ Verified the files are stored correctly in the bucket.
 
 ✅ Result: S3 bucket created and content uploaded successfully.
 
+-----------
+-----------
+
 ## Lets verify accessing index.html via s3 endpoint:
 
 <img width="1918" height="988" alt="Screenshot 2025-11-03 194421" src="https://github.com/user-attachments/assets/973b23cf-7fdd-4b49-a14f-d712a93a2eaf" />
@@ -70,6 +73,9 @@ my-pec-bucket-01.s3.ap-south-2.amazonaws.com
 
 <img width="1809" height="704" alt="Screenshot 2025-11-03 191720" src="https://github.com/user-attachments/assets/18582ab6-5e4a-41ab-9090-788a7c211c59" />
 
+-----------
+-----------
+
 <img width="1919" height="907" alt="Screenshot 2025-11-03 194740" src="https://github.com/user-attachments/assets/c81e1d71-9f0c-4b6f-acd2-d96c89101f0d" />
 
 Protocol: HTTPS only
@@ -83,17 +89,27 @@ Allowed HTTP Methods: GET, HEAD
 
 Cache Policy: CachingOptimized (Default)
 
+-----------
+-----------
+
 Created the distribution and waited for deployment to complete.
 
 <img width="1916" height="921" alt="Screenshot 2025-11-03 193914" src="https://github.com/user-attachments/assets/d87e83ad-72f4-48ae-a590-5d42c52d6425" />
 
 ✅ Result: CloudFront distribution deployed successfully.
 
+-----------
+-----------
+
 ## Lets verify if we can access via cloudfront endpoint:
 
 <img width="1919" height="980" alt="Screenshot 2025-11-03 192344" src="https://github.com/user-attachments/assets/446d1372-9914-4a6c-8e12-32ba56a05fda" />
 
+
 ### We cannot access it because we should set policy in S3 bucket to enable traffic from cloudfrount Distribution..
+
+-----------
+-----------
 
 ## Step 3: Restrict Bucket Access (OAC Security)
 
@@ -103,7 +119,10 @@ In CloudFront → Origin Settings, selected:
 
 <img width="1919" height="922" alt="Screenshot 2025-11-03 192912" src="https://github.com/user-attachments/assets/b57963c0-0daa-4fab-a7b4-9658c42972ea" />
 
-Create Origin Access Control (OAC)
+-----------
+-----------
+
+## Create Origin Access Control (OAC)
 
 Signing behavior: Sign requests (recommended)
 
@@ -136,6 +155,8 @@ Went to S3 → Permissions → Bucket Policy and added the policy below:
   ]
 }
 
+-----------
+-----------
 
 ✅ Result:
 
@@ -143,7 +164,10 @@ S3 bucket is private.
 
 Only CloudFront can access objects securely using OAC.
 
-Step 4: Testing and Validation
+-----------
+-----------
+
+## Step 4: Testing and Validation
 
 Test 1: Direct S3 Access
 URL:
@@ -154,6 +178,8 @@ https://my-pec-bucket-01.s3.ap-south-2.amazonaws.com/index.html
 
 Result: ❌ AccessDenied
 
+-----------
+-----------
 Test 2: CloudFront Access
 URL:
 
@@ -162,6 +188,9 @@ https://<your-cloudfront-domain-name>/index.html
 <img width="1919" height="978" alt="Screenshot 2025-11-03 193538" src="https://github.com/user-attachments/assets/7f65c182-48e8-4da1-acaf-96ed12cd2666" />
 
 Result: ✅ Website loads successfully
+
+-----------
+-----------
 
 Test 3: Caching Validation
 
@@ -173,6 +202,9 @@ Second request → Faster response (cache hit)
 
 ✅ Result: Content served securely and efficiently via CloudFront.
 
+-----------
+-----------
+
 🧠 Key Takeaways
 
 Used CloudFront + S3 integration with OAC to ensure content security.
@@ -180,3 +212,8 @@ Used CloudFront + S3 integration with OAC to ensure content security.
 Achieved HTTPS redirection, private bucket access, and optimized caching.
 
 Demonstrated testing with both direct and CloudFront access.
+
+-----------
+-----------
+
+# Author: Suyash Dahitule
