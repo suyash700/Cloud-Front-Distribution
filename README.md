@@ -183,7 +183,7 @@ Result: ❌ AccessDenied
 Test 2: CloudFront Access
 URL:
 
-https://<your-cloudfront-domain-name>/index.html
+https://dmzzmvnjcgbgo.cloudfront.net/index.html
 
 <img width="1919" height="978" alt="Screenshot 2025-11-03 193538" src="https://github.com/user-attachments/assets/7f65c182-48e8-4da1-acaf-96ed12cd2666" />
 
