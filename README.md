@@ -135,6 +135,7 @@ Went to S3 → Permissions → Bucket Policy and added the policy below:
 <img width="1919" height="918" alt="Screenshot 2025-11-03 193029" src="https://github.com/user-attachments/assets/22bc371d-c153-4992-b7b3-4748428ebea2" />
 
 
+
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -154,6 +155,8 @@ Went to S3 → Permissions → Bucket Policy and added the policy below:
     }
   ]
 }
+
+
 
 -----------
 -----------
